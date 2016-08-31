@@ -7,14 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C936AFD1036B3F1A24440675 /* libPods-CYChatInputView.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 88C982CF0790DDBF5279DDF2 /* libPods-CYChatInputView.a */; };
 		F3806CBE1D756F9500A2E20E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F3806CBD1D756F9500A2E20E /* main.m */; };
 		F3806CC11D756F9500A2E20E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F3806CC01D756F9500A2E20E /* AppDelegate.m */; };
 		F3806CC41D756F9500A2E20E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3806CC31D756F9500A2E20E /* ViewController.m */; };
-		F3806CC71D756F9500A2E20E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3806CC51D756F9500A2E20E /* Main.storyboard */; };
 		F3806CC91D756F9500A2E20E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3806CC81D756F9500A2E20E /* Assets.xcassets */; };
 		F3806CCC1D756F9500A2E20E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3806CCA1D756F9500A2E20E /* LaunchScreen.storyboard */; };
 		F3806CD71D756F9500A2E20E /* CYChatInputViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F3806CD61D756F9500A2E20E /* CYChatInputViewTests.m */; };
 		F3806CE21D756F9500A2E20E /* CYChatInputViewUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = F3806CE11D756F9500A2E20E /* CYChatInputViewUITests.m */; };
+		F3806CF21D75745200A2E20E /* ChatInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = F3806CF11D75745200A2E20E /* ChatInputView.m */; };
+		F3806CF81D7577E300A2E20E /* ChatInputMoreButton.m in Sources */ = {isa = PBXBuildFile; fileRef = F3806CF41D7577E300A2E20E /* ChatInputMoreButton.m */; };
+		F3806CF91D7577E300A2E20E /* ChatInputMoreView.m in Sources */ = {isa = PBXBuildFile; fileRef = F3806CF61D7577E300A2E20E /* ChatInputMoreView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,13 +38,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1B46DFF7F092CF48B446FEA9 /* Pods-CYChatInputView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CYChatInputView.release.xcconfig"; path = "Pods/Target Support Files/Pods-CYChatInputView/Pods-CYChatInputView.release.xcconfig"; sourceTree = "<group>"; };
+		88C982CF0790DDBF5279DDF2 /* libPods-CYChatInputView.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CYChatInputView.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8F5608758F1F6D7F2AF0AF07 /* Pods-CYChatInputView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CYChatInputView.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CYChatInputView/Pods-CYChatInputView.debug.xcconfig"; sourceTree = "<group>"; };
 		F3806CB91D756F9500A2E20E /* CYChatInputView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CYChatInputView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3806CBD1D756F9500A2E20E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F3806CBF1D756F9500A2E20E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F3806CC01D756F9500A2E20E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		F3806CC21D756F9500A2E20E /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		F3806CC31D756F9500A2E20E /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		F3806CC61D756F9500A2E20E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F3806CC81D756F9500A2E20E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F3806CCB1D756F9500A2E20E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F3806CCD1D756F9500A2E20E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -51,6 +56,13 @@
 		F3806CDD1D756F9500A2E20E /* CYChatInputViewUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CYChatInputViewUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3806CE11D756F9500A2E20E /* CYChatInputViewUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CYChatInputViewUITests.m; sourceTree = "<group>"; };
 		F3806CE31D756F9500A2E20E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F3806CF01D75745200A2E20E /* ChatInputView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatInputView.h; sourceTree = "<group>"; };
+		F3806CF11D75745200A2E20E /* ChatInputView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatInputView.m; sourceTree = "<group>"; };
+		F3806CF31D7577E300A2E20E /* ChatInputMoreButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatInputMoreButton.h; sourceTree = "<group>"; };
+		F3806CF41D7577E300A2E20E /* ChatInputMoreButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatInputMoreButton.m; sourceTree = "<group>"; };
+		F3806CF51D7577E300A2E20E /* ChatInputMoreView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatInputMoreView.h; sourceTree = "<group>"; };
+		F3806CF61D7577E300A2E20E /* ChatInputMoreView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatInputMoreView.m; sourceTree = "<group>"; };
+		F3806CF71D7577E300A2E20E /* ChatInputViewDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatInputViewDefines.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C936AFD1036B3F1A24440675 /* libPods-CYChatInputView.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +91,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		86B68A640CB762B2513AD54F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8F5608758F1F6D7F2AF0AF07 /* Pods-CYChatInputView.debug.xcconfig */,
+				1B46DFF7F092CF48B446FEA9 /* Pods-CYChatInputView.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		F3806CB01D756F9500A2E20E = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +107,8 @@
 				F3806CD51D756F9500A2E20E /* CYChatInputViewTests */,
 				F3806CE01D756F9500A2E20E /* CYChatInputViewUITests */,
 				F3806CBA1D756F9500A2E20E /* Products */,
+				86B68A640CB762B2513AD54F /* Pods */,
+				F96C00F6DA717A69E21FA131 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,11 +125,11 @@
 		F3806CBB1D756F9500A2E20E /* CYChatInputView */ = {
 			isa = PBXGroup;
 			children = (
+				F3806CEF1D75741B00A2E20E /* ChatInput */,
 				F3806CBF1D756F9500A2E20E /* AppDelegate.h */,
 				F3806CC01D756F9500A2E20E /* AppDelegate.m */,
 				F3806CC21D756F9500A2E20E /* ViewController.h */,
 				F3806CC31D756F9500A2E20E /* ViewController.m */,
-				F3806CC51D756F9500A2E20E /* Main.storyboard */,
 				F3806CC81D756F9500A2E20E /* Assets.xcassets */,
 				F3806CCA1D756F9500A2E20E /* LaunchScreen.storyboard */,
 				F3806CCD1D756F9500A2E20E /* Info.plist */,
@@ -140,6 +164,28 @@
 			path = CYChatInputViewUITests;
 			sourceTree = "<group>";
 		};
+		F3806CEF1D75741B00A2E20E /* ChatInput */ = {
+			isa = PBXGroup;
+			children = (
+				F3806CF31D7577E300A2E20E /* ChatInputMoreButton.h */,
+				F3806CF41D7577E300A2E20E /* ChatInputMoreButton.m */,
+				F3806CF51D7577E300A2E20E /* ChatInputMoreView.h */,
+				F3806CF61D7577E300A2E20E /* ChatInputMoreView.m */,
+				F3806CF71D7577E300A2E20E /* ChatInputViewDefines.h */,
+				F3806CF01D75745200A2E20E /* ChatInputView.h */,
+				F3806CF11D75745200A2E20E /* ChatInputView.m */,
+			);
+			path = ChatInput;
+			sourceTree = "<group>";
+		};
+		F96C00F6DA717A69E21FA131 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				88C982CF0790DDBF5279DDF2 /* libPods-CYChatInputView.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -147,9 +193,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F3806CE61D756F9500A2E20E /* Build configuration list for PBXNativeTarget "CYChatInputView" */;
 			buildPhases = (
+				87BC9705EBB610A7A485FAEB /* [CP] Check Pods Manifest.lock */,
 				F3806CB51D756F9500A2E20E /* Sources */,
 				F3806CB61D756F9500A2E20E /* Frameworks */,
 				F3806CB71D756F9500A2E20E /* Resources */,
+				38F47EE9F99F1C04F92059DF /* [CP] Embed Pods Frameworks */,
+				317416A9004BBD082AB5C60F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -245,7 +294,6 @@
 			files = (
 				F3806CCC1D756F9500A2E20E /* LaunchScreen.storyboard in Resources */,
 				F3806CC91D756F9500A2E20E /* Assets.xcassets in Resources */,
-				F3806CC71D756F9500A2E20E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,13 +313,64 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		317416A9004BBD082AB5C60F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CYChatInputView/Pods-CYChatInputView-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		38F47EE9F99F1C04F92059DF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CYChatInputView/Pods-CYChatInputView-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		87BC9705EBB610A7A485FAEB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F3806CB51D756F9500A2E20E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				F3806CC41D756F9500A2E20E /* ViewController.m in Sources */,
+				F3806CF21D75745200A2E20E /* ChatInputView.m in Sources */,
+				F3806CF81D7577E300A2E20E /* ChatInputMoreButton.m in Sources */,
 				F3806CC11D756F9500A2E20E /* AppDelegate.m in Sources */,
+				F3806CF91D7577E300A2E20E /* ChatInputMoreView.m in Sources */,
 				F3806CBE1D756F9500A2E20E /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -308,14 +407,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		F3806CC51D756F9500A2E20E /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F3806CC61D756F9500A2E20E /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		F3806CCA1D756F9500A2E20E /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -411,6 +502,7 @@
 		};
 		F3806CE71D756F9500A2E20E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8F5608758F1F6D7F2AF0AF07 /* Pods-CYChatInputView.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = CYChatInputView/Info.plist;
@@ -422,6 +514,7 @@
 		};
 		F3806CE81D756F9500A2E20E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1B46DFF7F092CF48B446FEA9 /* Pods-CYChatInputView.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = CYChatInputView/Info.plist;
@@ -496,6 +589,7 @@
 				F3806CE81D756F9500A2E20E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F3806CE91D756F9500A2E20E /* Build configuration list for PBXNativeTarget "CYChatInputViewTests" */ = {
 			isa = XCConfigurationList;
@@ -504,6 +598,7 @@
 				F3806CEB1D756F9500A2E20E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F3806CEC1D756F9500A2E20E /* Build configuration list for PBXNativeTarget "CYChatInputViewUITests" */ = {
 			isa = XCConfigurationList;
@@ -512,6 +607,7 @@
 				F3806CEE1D756F9500A2E20E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
