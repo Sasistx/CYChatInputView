@@ -11,7 +11,7 @@
 
 @interface ChatInputMoreButton : UIButton
 @property (nonatomic, strong) ChatInputMoreView* moreInputView;
-@property (nonatomic) ChatInputViewType type;
+@property (nonatomic, strong) NSArray* buttonInfo;
 @property (nonatomic, weak) id <ChatInputMoreViewDeleagte> delegate;
-- (void)refreshMoreView;
+- (void)refreshMoreViewWithButtonInfo:(NSArray*)buttonInfo;
 @end

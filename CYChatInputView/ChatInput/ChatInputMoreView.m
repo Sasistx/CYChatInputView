@@ -12,6 +12,7 @@
 #import "CYGlobalNavigatorMetrics.h"
 
 @interface ChatInputMoreView ()
+@property (nonatomic, strong) NSArray* dataArray;
 @end
 
 #define kButtonWidth 62
@@ -23,14 +24,12 @@
 
 @implementation ChatInputMoreView
 
-- (instancetype)initWithFrame:(CGRect)frame type:(ChatInputViewType)type delegate:(id)delegate
-{
+- (instancetype)initWithFrame:(CGRect)frame dataArray:(NSArray*)dataArray delegate:(id)delegate{
+
     self = [super initWithFrame:frame];
     if (self) {
-        
         _delegate = delegate;
-        _type = type;
-        [self createViewWithFrame:frame];
+        _dataArray = [dataArray copy];
     }
     return self;
 }
@@ -47,26 +46,25 @@
         scrollview.pagingEnabled = YES;
         scrollview;
     });
+
     [self addSubview:itemScrollView];
     
-    NSArray* buttons = [self buttonTypeWithChatViewType:_type];
-    
-    for (NSInteger i = 0 ; i < buttons.count; i ++) {
+    for (NSInteger i = 0 ; i < _dataArray.count; i ++) {
         
         NSInteger weight = i / 8;
         
         NSInteger row = (i / 4) % 2;
         
-        ChatInputViewType type = [buttons[i] integerValue];
+        NSDictionary* buttonInfo = _dataArray[i];
         
-        UIButton* button = [self createButtonByButtonType:type];
+        UIButton* button = [self createButtonByButtonInfo:buttonInfo indexTag:i];
         
         button.frame = CGRectMake(kOriginLeft + (weight * itemScrollView.width) + (i%4)*(kButtonWidth + kDivid), 11 + row * (kButtonHeight + 7), kButtonWidth, kButtonHeight);
         
         [itemScrollView addSubview:button];
     }
     
-    NSInteger page = ((buttons.count - 1) / 8 + 1) > 0 ? ((buttons.count - 1) / 8 + 1) : 1;
+    NSInteger page = ((_dataArray.count - 1) / 8 + 1) > 0 ? ((_dataArray.count - 1) / 8 + 1) : 1;
     itemScrollView.contentSize = CGSizeMake(frame.size.width * page, itemScrollView.height);
     
     UIPageControl* itemControl = ({
@@ -85,166 +83,33 @@
     [self addSubview:itemControl];
 }
 
-- (void)refreshWithType:(ChatInputViewType)type {
-    _type = type;
+- (void)refreshWithButtonInfo:(NSArray*)buttonInfo
+{
+    _dataArray = nil;
+    _dataArray = [buttonInfo copy];
     [self removeAllSubviews];
     [self createViewWithFrame:self.frame];
 }
-
-#pragma mark - 
-#pragma mark - get button info
-
-- (NSArray*)buttonTypeWithChatViewType:(ChatInputViewType)type
-{
-    NSMutableArray* array = [NSMutableArray array];
-    if (type & ChatInputViewTypePhoto) {
-        
-        [array addObject:@(ChatInputViewTypePhoto)];
-    }
-    
-    if (type & ChatInputViewTypeAlbum) {
-        
-        [array addObject:@(ChatInputViewTypeAlbum)];
-    }
-    
-    if (type & ChatInputViewTypeMoulde) {
-        
-        [array addObject:@(ChatInputViewTypeMoulde)];
-    }
-    
-    if (type & ChatInputViewTypeCoupon) {
-        
-        [array addObject:@(ChatInputViewTypeCoupon)];
-    }
-    
-    if (type & ChatInputViewTypeProfile) {
-        
-        [array addObject:@(ChatInputViewTypeProfile)];
-    }
-    
-    if (type & ChatInputViewTypeTopic) {
-        
-        [array addObject:@(ChatInputViewTypeTopic)];
-    }
-    
-    if (type & ChatInputViewTypeAgain) {
-        
-        [array addObject:@(ChatInputViewTypeAgain)];
-    }
-    
-    if (type & ChatInputViewTypeShowAppointment) {
-        
-        [array addObject:@(ChatInputViewTypeShowAppointment)];
-    }
-    
-    if (type & ChatInputViewTypeAudio) {
-        
-        [array addObject:@(ChatInputViewTypeAudio)];
-    }
-    
-    if (type & ChatInputViewTypeSpecialService) {
-        
-        [array addObject:@(ChatInputViewTypeSpecialService)];
-    }
-    
-    if (type & ChatInputViewTypeAssistant) {
-        
-        [array addObject:@(ChatInputViewTypeAssistant)];
-    }
-    
-    if (type & ChatInputViewTypeProposal) {
-        
-        [array addObject:@(ChatInputViewTypeProposal)];
-    }
-    return array;
-}
-
-- (NSDictionary*)buttonInfo:(ChatInputViewType)type
-{
-    switch (type) {
-        case ChatInputViewTypePhoto:
-        {
-            return @{@"title":@"拍照", @"image":@"chatinput_photo"};
-        }
-            break;
-        case ChatInputViewTypeAlbum:
-        {
-            return @{@"title":@"相册", @"image":@"chatinput_asset"};
-        }
-            break;
-        case ChatInputViewTypeMoulde:
-        {
-            return @{@"title":@"模板", @"image":@"chatinput_modul"};
-        }
-            break;
-        case ChatInputViewTypeCoupon:
-        {
-            return @{@"title":@"发优惠券", @"image":@"send_coupon"};
-        }
-            break;
-        case ChatInputViewTypeProfile:
-        {
-            return @{@"title":@"多档案提醒", @"image":@"chatinput_profile"};
-        }
-            break;
-        case ChatInputViewTypeTopic:
-        {
-            return @{@"title":@"发话题", @"image":@"chatinput_topic"};
-        }
-            break;
-        case ChatInputViewTypeAgain:
-        {
-            return @{@"title":@"建议复诊", @"image":@"chatinput_again"};
-        }
-            break;
-        case ChatInputViewTypeShowAppointment:
-        {
-            return @{@"title":@"门诊预约", @"image":@"chatinput_appointment"};
-        }
-            break;
-        case ChatInputViewTypeSpecialService:
-        {
-            return @{@"title":@"特色服务", @"image":@"chatinput_special_service"};
-        }
-            break;
-        case ChatInputViewTypeAssistant:
-        {
-            return @{@"title":@"转给助手", @"image":@"chatinput_assistant"};
-        }
-            break;
-        case ChatInputViewTypeProposal:
-        {
-            return @{@"title":@"方案建议", @"image":@"chatinput_proposal"};
-        }
-            break;
-        default:
-            return @{};
-            break;
-    }
-}
-
-- (UIButton*)createButtonByButtonType:(ChatInputViewType)type
+ 
+// buttonInfo: @{@"title":@"拍照", @"image":@"chatinput_photo"}
+- (UIButton*)createButtonByButtonInfo:(NSDictionary*)buttonInfo indexTag:(NSInteger)indexTag
 {
     UIButton* button = [UIButton buttonWithType:UIButtonTypeCustom];
-    
-    NSDictionary* buttonInfo = [self buttonInfo:type];
-    
     [button setImage:[UIImage imageNamed:buttonInfo[@"image"]] forState:UIControlStateNormal];
     [button setTitle:buttonInfo[@"title"] forState:UIControlStateNormal];
     [button setImageEdgeInsets:UIEdgeInsetsMake(0, 0, 20, 0)];
     [button setTitleEdgeInsets:UIEdgeInsetsMake(kButtonHeight - 15, -kButtonWidth, 0, 0)];
     [button setTitleColor:[UIColor colorWithRed:102/255.0 green:102/255.0 blue:102/255.0 alpha:1] forState:UIControlStateNormal];
     [button.titleLabel setFont:[UIFont systemFontOfSize:12]];
-    button.tag = type;
-    
+    button.tag = indexTag;
     return button;
 }
 
 - (void)itemButtonClicked:(id)sender
 {
     UIButton* button = sender;
-    if (_delegate && [_delegate respondsToSelector:@selector(moreItemButtonClicked:)]) {
-        [_delegate moreItemButtonClicked:button.tag];
+    if (_delegate && [_delegate respondsToSelector:@selector(moreItemButtonClicked:info:)]) {
+        [_delegate moreItemButtonClicked:button.tag info:_dataArray[button.tag]];
     }
 }
 

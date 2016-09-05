@@ -8,5 +8,6 @@ target 'CYChatInputView' do
 
 pod 'CYViewLib', '0.0.36'
 pod 'CYAudioRecorder', '~>0.0.3'
+pod 'SVProgressHUD', '~> 1.1'
 
 end

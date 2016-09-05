@@ -24,14 +24,15 @@
 {
     if (!_moreInputView) {
         
-        _moreInputView = [[ChatInputMoreView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 216) type:_type delegate:_delegate];
+        _moreInputView = [[ChatInputMoreView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 216) dataArray:_buttonInfo delegate:_delegate];
     }
     return _moreInputView;
 }
 
-- (void)refreshMoreView
+- (void)refreshMoreViewWithButtonInfo:(NSArray*)buttonInfo
 {
-    [self.moreInputView refreshWithType:self.type];
+    self.buttonInfo = buttonInfo;
+    [self.moreInputView refreshWithButtonInfo:_buttonInfo];
 }
 
 @end

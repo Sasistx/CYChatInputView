@@ -13,14 +13,14 @@
 
 @interface ChatInputMoreView : UIView <UIScrollViewDelegate>
 @property (nonatomic, weak) id <ChatInputMoreViewDeleagte> delegate;
-@property (nonatomic, readonly) ChatInputViewType type;
-- (instancetype)initWithFrame:(CGRect)frame type:(ChatInputViewType)type delegate:(id)delegate;
-- (void)refreshWithType:(ChatInputViewType)type;
+
+- (instancetype)initWithFrame:(CGRect)frame dataArray:(NSArray*)dataArray delegate:(id)delegate;
+- (void)refreshWithButtonInfo:(NSArray*)buttonInfo;
 @end
 
 @protocol ChatInputMoreViewDeleagte <NSObject>
 @optional
 
-- (void)moreItemButtonClicked:(ChatInputViewType)type;
+- (void)moreItemButtonClicked:(ChatInputViewType)type info:(NSDictionary*)info;
 
 @end
